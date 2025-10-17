@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aduritian | Hey!</title>
+  <style>
+    :root{
+      --yellow: #FFD600; /* bright yellow */
+      --yellow-soft: rgba(255,214,0,0.08);
+      --text-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    }
+
+    /* full-bleed gradient top (black) to bottom (yellow) */
+    html,body{height:100%;margin:0}
+    body{
+      min-height:100vh;
+      background: linear-gradient(to bottom, #000000 0%, #282828 20%, #6b6000 60%, var(--yellow) 100%);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:2rem;
+      box-sizing:border-box;
+    }
+
+    .hero{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:1.25rem;
+      width:100%;
+      max-width:960px;
+      text-align:center;
+    }
+
+    h1{
+      margin:0;
+      color:var(--yellow);
+      font-size:clamp(2rem, 6vw, 5rem);
+      line-height:1;
+      text-shadow: var(--text-shadow);
+      letter-spacing: -0.02em;
+    }
+
+    /* social row beneath the headline */
+    .social{
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      margin-top:0.5rem;
+      flex-wrap:wrap;
+    }
+
+    .avatar img{
+      width:64px;
+      height:64px;
+      border-radius:12px;
+      object-fit:cover;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+      border:2px solid rgba(255,255,255,0.06);
+      background:rgba(0,0,0,0.12);
+    }
+
+    .links{
+      display:flex;
+      gap:0.5rem;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .links a{
+      display:inline-block;
+      padding:0.45rem 0.9rem;
+      border-radius:8px;
+      color:var(--yellow);
+      text-decoration:none;
+      font-weight:600;
+      backdrop-filter: blur(4px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+      transition:transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .links a:hover, .links a:focus{
+      transform:translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      outline: none;
+    }
+
+    /* small responsive adjustments */
+    @media (max-width:420px){
+      .avatar img{width:52px;height:52px}
+      h1{font-size:2.25rem}
+      .links a{padding:0.4rem 0.7rem}
+    }
+
+    /* unobtrusive footer credit (optional) */
+    footer{position:fixed;left:12px;bottom:12px;color:rgba(255,214,0,0.65);font-size:12px}
+  </style>
+</head>
+<body>
+  <main class="hero" role="main">
+    <!-- Centered yellow text -->
+    <h1>Are you sure you want to download this file?</h1>
+    <h4>I just want to confirm that you didn't accidentally click this link and download something. I promise it's not malicious, but it's just for confirmation.</h4>
+    <!-- Social links with an image -->
+    <div class="social" aria-label="social links">
+      <nav class="links" aria-label="social links">
+        <a href="https://aduritian.github.io/files/BadApple84+CE.zip" aria-label="wowzee willigers, a file!">Yes, I want to download "BadApple84+CE.zip".</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>
